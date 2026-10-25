@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>隐私权政策 · gdirect</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { max-width: 46rem; margin: 3rem auto; padding: 0 1.25rem;
+         font: 16px/1.7 -apple-system, "PingFang SC", "Helvetica Neue", Arial, sans-serif; }
+  h1 { font-size: 1.6rem; }
+  h2 { font-size: 1.1rem; margin-top: 2rem; }
+  code { background: rgba(128,128,128,.15); padding: .1em .35em; border-radius: 4px; }
+  footer { margin-top: 3rem; font-size: .9rem; opacity: .7; }
+</style>
+</head>
+<body>
+<h1>隐私权政策 · gdirect</h1>
+<p>本政策说明 <code>gdirect</code>（下称“本工具”）如何处理通过 Google 账号授权获得的数据。</p>
+
+<h2>1. 本工具是什么</h2>
+<p>
+  本工具是一个安装并运行在本人自己电脑上的命令行程序，用于浏览、下载和上传本人 Google
+  云端硬盘中的文件。它仅供本人使用，不提供服务端服务，不对外提供账号或数据访问。
+</p>
+
+<h2>2. 申请哪些权限，为什么</h2>
+<p>登录时本工具只申请一项 OAuth 权限：</p>
+<ul>
+  <li><code>https://www.googleapis.com/auth/drive</code> —— 查看、修改、创建和删除云端硬盘文件。</li>
+</ul>
+<p>
+  这是浏览目录、下载文件、上传文件以及把云端硬盘挂载成本地目录所必需的最小权限集合。
+  本工具不申请 Gmail、日历、联系人、照片等其他任何 Google 数据。
+</p>
+
+<h2>3. 数据保存在哪里</h2>
+<p>
+  授权后获得的 OAuth 访问令牌、刷新令牌、扫描到的连接地址和本工具的设置，
+  全部保存在本机的一个私有 SQLite 文件中（macOS 路径为
+  <code>~/Library/Application Support/gdirect/state.sqlite3</code>，权限为仅当前用户可读写）。
+</p>
+<p>本工具没有后端服务器。上述数据不会上传、备份或同步到任何服务器，第三方无法访问。</p>
+
+<h2>4. 数据如何被使用</h2>
+<ul>
+  <li>仅用于在本人电脑与 Google 云端硬盘之间传输文件。</li>
+  <li>不会用于广告、画像、分析、模型训练或任何形式的二次利用。</li>
+  <li>不会出售、出租、交易或以其他方式向任何第三方披露、转让 Google 用户数据。</li>
+  <li>不读取与文件传输无关的内容。</li>
+</ul>
+
+<h2>5. 保留与删除</h2>
+<ul>
+  <li>在本机执行 <code>gdirect logout</code> 会立即删除保存的 OAuth 凭据。</li>
+  <li>删除上述 SQLite 文件同样会清除全部本地数据。</li>
+  <li>
+    也可以随时在
+    <a href="https://myaccount.google.com/permissions">Google 账号的第三方访问权限页面</a>
+    撤销本工具的授权，撤销后本工具将无法再访问任何 Google 数据。
+  </li>
+</ul>
+
+<h2>6. 传输安全</h2>
+<p>与 Google 之间的全部通信都使用 HTTPS 并校验证书；本工具不请求、不保存 Google 账号密码。</p>
+
+<h2>7. 政策变更</h2>
+<p>若本工具的数据处理方式发生变化，本页面会同步更新并修改下方日期。</p>
+
+<h2>8. 联系方式</h2>
+<p>关于本政策或数据处理有任何问题，请联系：<a href="mailto:bili.ndsans@gmail.com">bili.ndsans@gmail.com</a></p>
+
+<footer>
+  更新日期：2026-10-25 · <a href="./">返回首页</a>
+</footer>
+</body>
+</html>
